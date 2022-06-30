@@ -15,9 +15,6 @@
  */
 package io.seata.serializer.protobuf.convertor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.google.protobuf.Any;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
@@ -28,6 +25,9 @@ import io.seata.serializer.protobuf.generated.AbstractMessageProto;
 import io.seata.serializer.protobuf.generated.BatchResultMessageProto;
 import io.seata.serializer.protobuf.generated.MessageTypeProto;
 import io.seata.serializer.protobuf.manager.ProtobufConvertManager;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The type batch result message protobuf convertor.

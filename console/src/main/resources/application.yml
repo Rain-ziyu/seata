@@ -1,0 +1,4 @@
+console:
+  user:
+    name: seata
+    password: seata

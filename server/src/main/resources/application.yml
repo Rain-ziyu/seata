@@ -15,13 +15,17 @@ logging:
 #    kafka-appender:
 #      bootstrap-servers: 127.0.0.1:9092
 #      topic: logback_to_logstash
+console:
+  user:
+    username: seata
+    password: seata
 
 seata:
   config:
     # support: nacos 、 consul 、 apollo 、 zk  、 etcd3
     type: nacos
     nacos:
-      server-addr: 192.168.150.111:1111
+      server-addr: 127.0.0.1:8848
       namespace: public
       group: SEATA_GROUP
       username: nacos
@@ -57,9 +61,9 @@ seata:
 #    preferred-networks: 30.240.*
     nacos:
       application: seata-server
-      server-addr: 192.168.150.111:1111
+      server-addr: 127.0.0.1:8848
       group: SEATA_GROUP
-      namespace:
+      namespace: 1b933e3f-5773-4833-bca1-ad63f75f4db5
       cluster: default
       username: nacos
       password: nacos
@@ -172,3 +176,8 @@ seata:
       boss-thread-prefix: NettyBoss
       worker-thread-prefix: NettyServerNIOWorker
       boss-thread-size: 1
+  security:
+    secretKey: SeataSecretKey0c382ef121d778043159209298fd40bf3850a017
+    tokenValidityInMilliseconds: 1800000
+    ignore:
+      urls: /,/**/*.css,/**/*.js,/**/*.html,/**/*.map,/**/*.svg,/**/*.png,/**/*.ico,/console-fe/public/**,/api/v1/auth/login

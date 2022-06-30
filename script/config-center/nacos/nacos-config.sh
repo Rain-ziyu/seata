@@ -84,6 +84,8 @@ tempLog=$(mktemp -u)
 function addConfig() {
   dataId=`urlencode $1`
   content=`urlencode $2`
+  echo $dataId
+  echo $content
   curl -X POST -H "${contentType}" "http://$nacosAddr/nacos/v1/cs/configs?dataId=$dataId&group=$group&content=$content&tenant=$tenant&username=$username&password=$password" >"${tempLog}" 2>/dev/null
   if [ -z $(cat "${tempLog}") ]; then
     echo " Please check the cluster status. "
